@@ -6,7 +6,9 @@
 		<!-- VIEWPORT -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- TITLE -->
-		<title></title>
+		<title>book finder</title>
+		<!-- FAVICON -->
+		<link rel="shortcut icon" href="img/favicon.png">
 		<!-- GOOGLE FONT -->
 		<link href="https://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
@@ -17,30 +19,30 @@
 		<!-- ORIGINAL CSS -->
 		<link rel="stylesheet" href="css/main.css">
 	</head>
+
 	<body class="wrapper">
 
+		<!-- Book Search (1st page),element hides when button clicked -->
 		<div id="topScreen">
 			<h1 class="text-white display-4"><i class="fas fa-glasses"></i>Book Finder</h1>
 			<input type="text" id="search">
 
 			<!-- Button trigger  -->
-			<button type="button" id="searchBtn" >
-			  Search
-			</button>
+			<button type="button" id="searchBtn" >Search</button>
 	 </div>
-
-
 
 
 		<!-- Result display here -->
 		<div id="openDiv" class="hideResult">
 			<div class="container">
 				<div id="bookResult" class="hidden row">
-
-				<button type="button" class="back-button">Back to <i class="fas fa-search"></i></button>
 				</div>
 
+				<div>
+					<button type="button" id="goBack">Back to <i class="fas fa-search"></i></button>
+				</div>
 	   </div>
+	 </div>
 
 
 

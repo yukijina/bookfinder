@@ -1,18 +1,22 @@
-$('#searchBtn, .back-button').click(function(){
+//Click and Toggle : page view change
+$('#searchBtn, #goBack').click(function(){
   $('#topScreen').toggleClass('openResult')
   $('#openDiv').toggleClass('hideResult')
   $('#bookResult').toggleClass('hidden')
   $('body').toggleClass('wrapper')
+  $('#goBack').toggleClass('back-button')
  console.log('working');
 })
 
-$('.back-button').click(function(){
+//Click and go back to search page
+$('#goBack').click(function(){
   document.getElementById('search').value = ""
+  $('#bookResult').html("")
   console.log('clear')
 })
 
 
-
+//Book Search - API function
 function bookSearch() {
   var search = document.getElementById('search').value
 
@@ -24,6 +28,7 @@ function bookSearch() {
 
     success: function(data) {
       for (var i = 0; i < data.items.length; i++) {
+        //create new Div to make page responsive(bootstrap)
         var wrapper = document.createElement('div')
         var iData = data.items[i].volumeInfo
 
@@ -45,11 +50,13 @@ function bookSearch() {
         a.className = 'btn btn-outline-info'
         a.target = '_blank'
 
+        // if author is not fund, "no found"
         if (iData.authors) {
           author.textContent = "Author: " + iData.authors[0]
         } else {
           author.textContent = "No author found"
         }
+        // if no image, display "no image" picture
         if (iData.imageLinks) {
           image.src = iData.imageLinks.thumbnail
         } else {
@@ -58,30 +65,14 @@ function bookSearch() {
 
          //bookResult.innerHTML +=
 
-
+         // div(#bookResult) - div(wrapper) - other el
          $('#bookResult').append(wrapper)
          $(wrapper).append([title, author, rating, image, a])
         }
       },
       type: 'GET'
     }) //end of ajax
-
   } // end of function booksearch()
 
+// after click, book search initiates
 document.getElementById('searchBtn').addEventListener('click',bookSearch, false)
-
-
-
-// Suspended - modal
-//var modalContent = document.getElementsByClassName('modal-content')[0]
-//When user clicks on the button, open modal
-// $('button').click(function() {
-//     $('.modal').css('display', 'block')
-//     bookSearch()
-//     console.log('working!')
-//   })
-//
-// $('span').click(function displayNone() {
-//   $('.modal').css('display', 'none')
-//   console.log('running!')
-// })

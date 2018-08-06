@@ -8,6 +8,7 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+/* wrapper = body, need this to make JS easier */
 .wrapper {
   background: linear-gradient(to right, rgba(42, 42, 43, 0.8), rgba(144, 142, 141, 0.5)), url(../img/bg.jpeg);
   background-repeat: no-repeat;
@@ -21,34 +22,39 @@ h1 {
   letter-spacing: 0.4rem;
 }
 
+
+/* 2nd Div after Wrapper */
 #topScreen {
   z-index: 999;
   text-align: center;
   margin-top: 8%;
 }
 
-.openResult {
- display: none;
-}
+/* hide #topScreen when button clicked */
+  .openResult {
+   display: none;
+  }
 
+
+/* 3rd Div, this displays when button clicked */
 #openDiv {
-  /* position: fixed;
-  top: 0;
-  left: 0; */
   z-index: 998;
   width: 100%;
   height: 100%;
   background-image: url(../img/bg2.png);
 }
 
+/* to make 3rdDiv hide, this needs */
 #openDiv.hideResult {
   width: 0;
 }
 
+/* Hide all bookfinder page */
 .hidden {
   display: none;
 }
 
+/* input section */
 #search {
   margin-top: 2%;
   border: none;
@@ -67,59 +73,19 @@ h1 {
   border-radius: 8px;
   color: #fff;
 }
-.back-button {
+
+
+/* Back button, only displays book result page */
+#goBack {
+  display: none;
+}
+
+/* need both id and class to overwrite #goBack above */
+#goBack.back-button {
+  display: initial;
   position: fixed;
   top: 5px;
   right: 5px;
   border-radius: 50%;
   padding: 1rem;
 }
-
-
-
-
-
-
-
-
-
-
-/* Suspended modal */
-/* Modal (background) */
-/* .modal {
-  display: none; /* Hidden by default */
-/* position: fixed;
-  z-index: 1; /* sit on top */
-/* left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;  /* Enable scrol if needed */
-/* background-color: rgb(0,0,0); /* Fallback color */
-/* background-color: rgb(0,0,0,0.4); /* Black w/ opacity */
-/*} */
-
-/* Modal Content Box */
-/*.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from top ad centered */
-/* padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
-/*} */
-
-/* Close button */
-/*.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-*/
