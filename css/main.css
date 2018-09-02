@@ -15,11 +15,13 @@ body {
   background-position: center;
   background-size: cover;
   height: 100vh;
+  color: #0f0e0e;
 }
 
 h1 {
   font-family: 'Berkshire Swash', cursive;
   letter-spacing: 0.4rem;
+  color: #fcfcfc;
 }
 
 
